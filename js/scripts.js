@@ -77,7 +77,7 @@ function handleFormSubmission() {
   const commonWords = mostCommonWords(passage);
   document.getElementById("total-count").innerText = wordCount;
   document.getElementById("selected-count").innerText = occurrencesOfWord;
-  document.getElementById("common-words").append(displayObject(commonWords));
+  document.getElementById("common-words").append(displayArray(commonWords));
   let boldedPassage = boldPassage(word, passage);
   if (boldedPassage) {
     document.querySelector("div#bolded-passage").append(boldedPassage);
@@ -86,12 +86,12 @@ function handleFormSubmission() {
   }
 }
 
-function displayObject(object) {
+function displayArray(array) {
   const p = document.createElement("p");
-  for (let key in object) {
-    const br = document.createElement("br")
-    p.append(`${key}: ${object[key]}`, br);
-  }
+  array.forEach(function(element) {
+    const br = document.createElement("br");
+    p.append(`${element[0]}: ${element[1]}`, br);
+  })
   return p
 }
 
