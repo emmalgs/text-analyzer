@@ -114,3 +114,45 @@ Code:
 const text = "This little muppeteer walks up to me with a zoinks and a biffaroni smile and asks me to take a loopdaloop around the park?!";
 checkOffensiveWords(text);
 Expected Output: "This little walks up to me with a and a smile and asks me to take a around the park?!"
+
+Describe: boldPassage()
+
+Test: "It should return null if no word or text is entered."
+Code:
+const text = "";
+const word = "";
+boldPassage(word, text);
+Expected Output: null
+
+Test: "It should return a non-matching word in a p tag."
+Code:
+const word = "hello";
+const text = "yo";
+boldPassage(word, text);
+Expected Output: <p>yo</p>
+
+Test: "It should return a matching word in a strong tag."
+Code:
+const word = "hello";
+const text = "hello";
+boldPassage(word, text);
+Expected Output: <p><strong>hello</strong></p>
+
+Test: "It should wrap words that match in strong tags but not words that don't."
+Code:
+const word = "hello";
+const text = "hello there";
+boldPassage(word, text);
+Expected Output: <p><strong>hello</strong> there</p>
+
+Describe: mostCommonWords();
+
+Test: "It should return 0 for empty input text."
+Code: mostCommonWords("");
+Expected Output: 0;
+
+Test: "It should return a word count for one word."
+Code: 
+const text = "Hello hello";
+mostCommonWords(text);
+Expected output: hello: 2;
