@@ -169,3 +169,12 @@ const text = "hello what is up     ";
 mostCommonWords(text);
 Expected output: hello: 1; what: 1; is: 1; up: 1;
 
+Test: "It sorts the most common words to the top."
+Code: 
+const text = "Hi there hey yo hi hi yay yo whoa there whoa yay"
+Expected output: hi: 3
+there: 2
+yo: 2
+yay: 2
+whoa: 2
+hey: 1;

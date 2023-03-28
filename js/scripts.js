@@ -56,8 +56,14 @@ function mostCommonWords(text) {
     if (!Number(word)) {
     wordCount[word] = numberOfOccurrencesInText(word, text);
     }
-  }) 
-  return wordCount
+  })
+  const sortedWordCount = []
+  for (let word in wordCount) {
+    sortedWordCount.push([word, wordCount[word]]);
+  }
+  return sortedWordCount.sort(function(a,b) {
+    return b[1] - a[1];
+  })
 }
 
 // UI Logic
