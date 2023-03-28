@@ -50,15 +50,11 @@ function mostCommonWords(text) {
   if (isEmpty(text)) {
     return 0;
   }
-  const textArray = text.split(" ");
-  let wordCount = []
-  textArray.forEach(function(word, index) {
-    let wordCountArray = [word]
-    wordCount.push(wordCountArray)
-    if (word === textArray.at(index - 1)) {
-      wordCountArray.push(word)
-    }
-  })
+  const textArray = text.toLowerCase().split(" ");
+  const wordCount = {}
+  textArray.forEach(function(word) {
+    wordCount[word] = numberOfOccurrencesInText(word, text);
+  }) 
   return wordCount
 }
 
