@@ -24,5 +24,14 @@ function numberOfOccurrencesInText(word, text) {
 }
 
 function checkOffensiveWords(text) {
-  return text;
+  const offensiveWords = "loopdaloop";
+  const textArray = text.split(" ");
+
+  textArray.forEach(function(element) {
+    let index = textArray.indexOf(element);
+    if (element === offensiveWords) {
+      textArray.splice(index, 1);
+    }
+  });
+  return textArray.join(" ")
 }

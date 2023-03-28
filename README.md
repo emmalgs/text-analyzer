@@ -78,3 +78,8 @@ const text = "This is just a little bit of nice, nonoffensive text.";
 checkOffensiveWords(text);
 Expected Output: "This is just a little bit of nice, nonoffensive text."
 
+Test: "It should find and omit one of the four offensive words, starting with loopdaloop."
+Code:
+const text = "I would never in my loopdaloop life go skydiving."
+checkOffensiveWords(text);
+Expected Output: "I would never in my life go skydiving."
