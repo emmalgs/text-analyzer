@@ -1,12 +1,12 @@
 function wordCounter(text) {
+  if (text.trim().length === 0) {
+    return 0;
+  }
   let wordCount = 0;
   const textArray = text.split(" ");
-  if (textArray.length > 0) {
+  textArray.length > 0
   textArray.forEach(function(word) {
     wordCount++;
     });
-  } else if (textArray.length === 0) {
-    wordCount = 0;
-  }
   return wordCount;
 }
