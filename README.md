@@ -95,3 +95,15 @@ Code:
 const text = "I took a biffaroni to the head when I walked into that loopdaloop bar."
 checkOffesniveWords(text);
 Expected Output: "I took a to the head when I walked into that bar."
+
+Test: "It should find and omit multiple instances of either biffaroni or loopdaloop."
+Code:
+const text = "My biffaroni brain can't get enough loopdaloop coding in one biffaroni loopdaloop day!"
+checkOffesniveWords(text);
+Expected Output: "My brain can't get enough coding in one day!"
+
+Test: "It should find and omit all instances of any of the four offensive words."
+Code:
+const text = "This little muppeteer walks up to me with a zoinks and a biffaroni smile and asks me to take a loopdaloop around the park?!";
+checkOffensiveWords(text);
+Expected Output: "This little walks up to me with a and a smile and asks me to take a around the park?!"
