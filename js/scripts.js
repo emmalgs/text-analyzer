@@ -22,3 +22,7 @@ function numberOfOccurrencesInText(word, text) {
   });
   return counter;
 }
+
+function checkOffensiveWords(text) {
+  return text;
+}

@@ -69,3 +69,12 @@ const text = "Red! Red. I like red, green, and yellow.";
 const word = "Red";
 numberOfOccurrencesInText(word, text);
 Expected Output: 3
+
+Describe: checkOffensiveWords()
+
+Test: "It should return input text with no offensive words."
+Code:
+const text = "This is just a little bit of nice, nonoffensive text.";
+checkOffensiveWords(text);
+Expected Output: "This is just a little bit of nice, nonoffensive text."
+
