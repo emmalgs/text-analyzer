@@ -83,3 +83,15 @@ Code:
 const text = "I would never in my loopdaloop life go skydiving."
 checkOffensiveWords(text);
 Expected Output: "I would never in my life go skydiving."
+
+Test: "It should find and omit the same offensive word (loopdaloop) multiple times."
+Code:
+const text = "I would never in my loopdaloop life go loopdaloop skydiving for no amount of loopdaloop money."
+checkOffensiveWords(text);
+Expected Output: "I would never in my life go skydiving for no amount of money."
+
+Test: "It should find and omit two different offensive words (loopdaloop and biffaroni)"
+Code:
+const text = "I took a biffaroni to the head when I walked into that loopdaloop bar."
+checkOffesniveWords(text);
+Expected Output: "I took a to the head when I walked into that bar."

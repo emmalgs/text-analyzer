@@ -24,14 +24,17 @@ function numberOfOccurrencesInText(word, text) {
 }
 
 function checkOffensiveWords(text) {
-  const offensiveWords = "loopdaloop";
+  const offensiveWords = ["biffaroni","loopdaloop"];
   const textArray = text.split(" ");
 
-  textArray.forEach(function(element) {
-    let index = textArray.indexOf(element);
-    if (element === offensiveWords) {
-      textArray.splice(index, 1);
-    }
+  offensiveWords.forEach(function(word) {
+    textArray.forEach(function(element) {
+      let index = textArray.indexOf(element);
+      if (element === word) {
+        textArray.splice(index, 1);
+      }
+    });
   });
+
   return textArray.join(" ")
 }
