@@ -5,8 +5,10 @@ function wordCounter(text) {
   let wordCount = 0;
   const textArray = text.split(" ");
   textArray.length > 0
-  textArray.forEach(function(word) {
+  textArray.forEach(function(element) {
+    if (!Number(element)) {
     wordCount++;
-    });
+    }
+  });
   return wordCount;
 }
