@@ -16,7 +16,7 @@ function numberOfOccurrencesInText(word, text) {
   const textArray = text.split(" ");
   let counter = 0
   textArray.forEach(function(element) {
-    if (element.toLowerCase() === word.toLowerCase()) {
+    if (element.toLowerCase().includes(word.toLowerCase())) {
       counter++
     }
   });
