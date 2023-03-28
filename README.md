@@ -153,6 +153,12 @@ Expected Output: 0;
 
 Test: "It should return a word count for one word."
 Code: 
-const text = "Hello hello";
+const text = "Hello bye";
+mostCommonWords(text);
+Expected output: hello: 1, bye: 1;
+
+Test: "It should return a word count for one word multiple times."
+Code:
+const text = "hello hello";
 mostCommonWords(text);
 Expected output: hello: 2;
