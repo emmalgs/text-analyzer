@@ -162,3 +162,10 @@ Code:
 const text = "hello hello";
 mostCommonWords(text);
 Expected output: hello: 2;
+
+Test: "It should not count whitespace at the end of a string"
+Code:
+const text = "hello what is up     ";
+mostCommonWords(text);
+Expected output: hello: 1; what: 1; is: 1; up: 1;
+

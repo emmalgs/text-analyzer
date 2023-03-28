@@ -50,10 +50,12 @@ function mostCommonWords(text) {
   if (isEmpty(text)) {
     return 0;
   }
-  const textArray = text.toLowerCase().split(" ");
+  const textArray = text.toLowerCase().trim().split(" ");
   const wordCount = {}
   textArray.forEach(function(word) {
+    if (!Number(word)) {
     wordCount[word] = numberOfOccurrencesInText(word, text);
+    }
   }) 
   return wordCount
 }
@@ -66,14 +68,25 @@ function handleFormSubmission() {
   const word = document.getElementById("word").value;
   const wordCount = wordCounter(passage);
   const occurrencesOfWord = numberOfOccurrencesInText(word, passage);
+  const commonWords = mostCommonWords(passage);
   document.getElementById("total-count").innerText = wordCount;
   document.getElementById("selected-count").innerText = occurrencesOfWord;
+  document.getElementById("common-words").append(displayObject(commonWords));
   let boldedPassage = boldPassage(word, passage);
   if (boldedPassage) {
     document.querySelector("div#bolded-passage").append(boldedPassage);
   } else {
     document.querySelector("div#bolded-passage").innerText = null;
   }
+}
+
+function displayObject(object) {
+  const p = document.createElement("p");
+  for (let key in object) {
+    const br = document.createElement("br")
+    p.append(`${key}: ${object[key]}`, br);
+  }
+  return p
 }
 
 function boldPassage(word, text) {
